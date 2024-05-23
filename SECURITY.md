@@ -8,5 +8,5 @@ Please report any security vulnerabilities you discover to [contact@example.com]
 
 This project currently supports the following versions:
 
-- ROS2 Foxy
-- ROS2 Galactic
+- ROS2 Humble
+
