@@ -10,9 +10,9 @@ This is a simple ROS2 project to demonstrate package organization, Docker integr
 ## Installation
 ```bash
 # Clone the repository
-git clone https://github.com/Vishalsub/ros2-example .git
+git clone https://github.com/Vishalsub/ros2-example.git
 # change dir
-cd your_repository
+cd my_ros2_projects
    ```
 
 ## How to Build and Run
@@ -23,7 +23,7 @@ Build the Docker image:
 
 ```bash
 
-cd my_ros2_projects/docker  
+cd docker  
 
 docker build -t my_ros2_project .
 
