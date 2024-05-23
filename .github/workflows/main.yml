@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up ROS 2
+      uses: ros-tooling/setup-ros@v0.2.0
+      with:
+        distribution: humble
+
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y python3-colcon-common-extensions
+
+    - name: Build
+      run: colcon build --event-handlers console_cohesion+
+
+    - name: Test
+      run: colcon test --event-handlers console_cohesion+
