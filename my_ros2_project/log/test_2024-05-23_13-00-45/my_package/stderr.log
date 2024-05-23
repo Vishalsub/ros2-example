@@ -1,0 +1,11 @@
+[33m=============================== warnings summary ===============================[0m
+test/test_flake8.py::test_flake8
+test/test_flake8.py::test_flake8
+  Warning: SelectableGroups dict interface is deprecated. Use select.
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+Exception ignored in: <function Executor.__del__ at 0x7f835a2e5e10>
+Traceback (most recent call last):
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 243, in __del__
+    if self._sigint_gc is not None:
+AttributeError: 'SingleThreadedExecutor' object has no attribute '_sigint_gc'

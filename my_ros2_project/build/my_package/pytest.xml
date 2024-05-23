@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="1" failures="2" skipped="1" tests="4" time="666.942" timestamp="2024-05-23T13:00:47.991430" hostname="LAPTOP-AC99NA7A"><testcase classname="my_package.test.test_copyright" name="test_copyright" time="0.001"><skipped type="pytest.skip" message="No copyright header has been placed in the generated source file.">/mnt/d/ROS/ros2-example/my_ros2_project/src/my_package/test/test_copyright.py:20: No copyright header has been placed in the generated source file.</skipped></testcase><testcase classname="my_package.test.test_flake8" name="test_flake8" time="0.329"><failure message="AssertionError: Found 8 code style errors / warnings:&#10;  ./my_package/my_pub_node.py:39:11: W292 no newline at end of file&#10;  ./test/test_minimal_publisher.py:1:1: F401 'os' imported but unused&#10;  ./test/test_minimal_publisher.py:5:1: F401 'launch_ros.actions' imported but unused&#10;  ./test/test_minimal_publisher.py:6:1: F401 'launch_testing' imported but unused&#10;  ./test/test_minimal_publisher.py:7:1: F401 'pytest' imported but unused&#10;  ./test/test_minimal_publisher.py:13:1: E302 expected 2 blank lines, found 1&#10;  ./test/test_minimal_publisher.py:54:1: W293 blank line contains whitespace&#10;  ./test/test_minimal_publisher.py:59:1: E305 expected 2 blank lines after class or function definition, found 1&#10;assert 1 == 0">test/test_flake8.py:23: in test_flake8
+    assert rc == 0, \
+E   AssertionError: Found 8 code style errors / warnings:
+E     ./my_package/my_pub_node.py:39:11: W292 no newline at end of file
+E     ./test/test_minimal_publisher.py:1:1: F401 'os' imported but unused
+E     ./test/test_minimal_publisher.py:5:1: F401 'launch_ros.actions' imported but unused
+E     ./test/test_minimal_publisher.py:6:1: F401 'launch_testing' imported but unused
+E     ./test/test_minimal_publisher.py:7:1: F401 'pytest' imported but unused
+E     ./test/test_minimal_publisher.py:13:1: E302 expected 2 blank lines, found 1
+E     ./test/test_minimal_publisher.py:54:1: W293 blank line contains whitespace
+E     ./test/test_minimal_publisher.py:59:1: E305 expected 2 blank lines after class or function definition, found 1
+E   assert 1 == 0</failure></testcase><testcase classname="my_package.test.test_minimal_publisher.TestMinimalPublisher" name="test_publisher" time="665.936"><failure message="rclpy._rclpy_pybind11.RCLError: failed to create guard_condition: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67">test/test_minimal_publisher.py:53: in test_publisher
+    rclpy.spin_once(self.node, timeout_sec=5)
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py:199: in spin_once
+    executor = get_global_executor() if executor is None else executor
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py:102: in get_global_executor
+    __executor = SingleThreadedExecutor()
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py:721: in __init__
+    super().__init__(context=context)
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py:172: in __init__
+    self._guard = GuardCondition(
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/guard_condition.py:24: in __init__
+    self.__gc = _rclpy.GuardCondition(self._context.handle)
+E   rclpy._rclpy_pybind11.RCLError: failed to create guard_condition: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67</failure></testcase><testcase classname="my_package.test.test_minimal_publisher.TestMinimalPublisher" name="test_publisher" time="0.001"><error message="failed on teardown with &quot;rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241&quot;">test/test_minimal_publisher.py:21: in tearDownClass
+    rclpy.shutdown()
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py:126: in shutdown
+    _shutdown(context=context)
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py:58: in shutdown
+    return context.shutdown()
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py:102: in shutdown
+    self.__context.shutdown()
+E   rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241</error></testcase><testcase classname="my_package.test.test_pep257" name="test_pep257" time="0.061" /></testsuite></testsuites>
