@@ -1,4 +1,4 @@
-FROM ros:humble-ros-base
+FROM osrf/ros:humble-desktop-full
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
